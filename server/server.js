@@ -8,6 +8,7 @@ const passport = require('./strategies/user.strategy');
 
 // Route includes
 const userRouter = require('./routes/user.router');
+const potluckRouter = require("./routes/potluck");
 
 // Express middleware
 app.use(express.json());
@@ -21,6 +22,7 @@ app.use(passport.session());
 
 /* Routes */
 app.use('/api/user', userRouter);
+app.use('/api/potluck', potluckRouter);
 
 // Serve static files
 app.use(express.static('build'));
